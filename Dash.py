@@ -39,7 +39,7 @@ def audience_simple(country):
 # load data
 def load_data():
     df_agg = pd.read_csv(
-        r"C:\Users\Admin\Documents\data sci\Dashboard\Youtube data\Aggregated_Metrics_By_Video.csv"
+        "Aggregated_Metrics_By_Video.csv"
     ).iloc[1:, :]
     df_agg.columns = [
         "Video",
@@ -80,13 +80,13 @@ def load_data():
     df_agg["Views / sub gained"] = df_agg["Views"] / df_agg["Subscribers gained"]
     df_agg.sort_values("Video publish time", ascending=False, inplace=True)
     df_agg_sub = pd.read_csv(
-        r"C:\Users\Admin\Documents\data sci\Dashboard\Youtube data\Aggregated_Metrics_By_Country_And_Subscriber_Status.csv"
+        r"\Aggregated_Metrics_By_Country_And_Subscriber_Status.csv"
     )
     df_comments = pd.read_csv(
-        r"C:\Users\Admin\Documents\data sci\Dashboard\Youtube data\Aggregated_Metrics_By_Video.csv"
+        "Aggregated_Metrics_By_Video.csv"
     )
     df_time = pd.read_csv(
-        r"C:\Users\Admin\Documents\data sci\Dashboard\Youtube data\Video_Performance_Over_Time.csv"
+       "Video_Performance_Over_Time.csv"
     )
     df_time["Date"] = pd.to_datetime(df_time["Date"], format="mixed")
     return df_agg, df_agg_sub, df_comments, df_time
